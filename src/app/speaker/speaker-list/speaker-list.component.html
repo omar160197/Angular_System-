@@ -1,0 +1,195 @@
+<!-- 
+<div class="form-group">
+  <input type="text" class="form-control mb-4" placeholder="Search" [(ngModel)]="query" id="listSearch">
+</div>
+
+<table class="table table-bordered" *ngIf="speakers.length > 0">
+  <thead>
+    <tr class="text-center">
+      <th>Email</th>
+      <th>FullName</th>
+      <th>address</th>
+      <th>role</th>
+      <th>Operation</th>
+    </tr> 
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of speakers | searchFilter: query "class="text-center">
+      <td>
+        <div >{{item.email}}</div>
+      </td>
+      <td>
+        <div >{{item.fullName}}</div>
+    </td>
+    <td>
+      <div >{{item.address}}</div>
+  </td>
+
+      <td> 
+        <div >{{item.role}}</div>
+     
+      </td>
+        <td>
+        <button
+          type="button"
+          class="btn btn-primary mx-2"
+          (click)="showDetails(item)"
+        >
+          Details
+        </button>
+        <app-speaker-delete [speakerEmail]="item.email" ></app-speaker-delete>
+      </td>
+      <td>
+
+
+     <button class="btn btn-primary" (click)=" speakermail=item.email">Edit</button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+<app-speaker-details  [speaker]="speakerDetails" ></app-speaker-details>
+<br />
+<br/>
+<app-speaker-add></app-speaker-add>
+<br>
+<br>
+<br>
+<div>
+  update
+  <br>
+  <app-update>[speakerEmail]="speakermail"</app-update>   
+</div>
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="form-group">
+  <input type="text" class="form-control mb-4" placeholder="Search" [(ngModel)]="query" id="listSearch">
+</div>
+
+
+<table class="table table-bordered" *ngIf="speakers.length > 0">
+  <thead>
+    <tr class="text-center">
+      <th>Id</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Birth</th>
+      <th>HourRate</th>
+      <th>Marital Status</th>
+      <th>Gouverment</th>
+      <th>Rating</th>
+      <th>
+        <button  class="btn btn-primary" (click)="viewImage()">view</button>
+        </th>
+      <th>Operation</th>
+
+        <th>
+            <button class="btn btn-primary" (click)="isEditable=!isEditable" *ngIf="!isEditable">Edit</button>
+            <button class="btn btn-primary" (click)="isEditable=!isEditable" *ngIf="isEditable">Save</button>
+         </th>
+    </tr> 
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of speakers | searchFilter: query" class="text-center">
+      <td > 
+        <div *ngIf="!isEditable">{{item._id}}</div>
+        <input *ngIf="isEditable"  type="text" [(ngModel)]="item._id" [disabled]="!isEditable"/>
+    </td>
+     
+      <td>
+        <div *ngIf="!isEditable">{{item.name}}</div>
+        <input *ngIf="isEditable"  type="text" [(ngModel)]="item.name" [disabled]="!isEditable"/>
+    </td>
+    <td>
+      <div *ngIf="!isEditable">{{item.address}}</div>
+      <select  *ngIf="isEditable" [(ngModel)]="item.address" [disabled]="!isEditable">
+        <option>Alex</option>
+        <option>Mansoura</option>
+        <option>Smart</option>
+      </select>
+
+      <div *ngIf="!isEditable">{{item.address}}</div>
+      
+     
+  </td>
+      <td>
+        <div *ngIf="!isEditable">{{item.bdate|date:"dd/M/yyy"}}</div>
+        <input *ngIf="isEditable"  type="text" [(ngModel)]="item.bdate" [disabled]="!isEditable"/>
+    </td>
+      <td> 
+        <div *ngIf="!isEditable">{{item.hourRate|currency}}</div>
+        <input *ngIf="isEditable"  type="text" [(ngModel)]="item.hourRate" [disabled]="!isEditable"/>
+    </td>
+
+    <td> 
+      <div *ngIf="!isEditable">{{item.isMarried}}</div>
+      <input *ngIf="isEditable"  type="text" [(ngModel)]="item.isMarried" [disabled]="!isEditable"/>
+  </td>
+
+  <td> 
+    <div *ngIf="!isEditable">{{item.gouverment}}</div>
+    <input *ngIf="isEditable"  type="text" [(ngModel)]="item.gouverment" [disabled]="!isEditable"/>
+</td>
+
+<td> 
+  <div *ngIf="!isEditable"><app-stars [rating]="item.rating"></app-stars></div>
+  <input *ngIf="isEditable"  type="text" [(ngModel)]="item.rating" [disabled]="!isEditable"/>
+</td>
+      <td> <img src={{item.image}}  width="50" height="50" title=""  *ngIf="hidden"/></td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-primary mx-2"
+          (click)="showDetails(item)"
+        >
+          Details
+        </button>
+        <app-speaker-delete [newSpeaker]="speakers" [speakerId]="item._id" 
+        (speakerDelete)="saveSpeakerAfterDelete($event)"
+        ></app-speaker-delete>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<app-speaker-details  [speaker]="speakerDetails"></app-speaker-details>
+<br />
+<app-speaker-add (speakerAdded)="saveSpeaker($event)"></app-speaker-add>
+
+ --> -->

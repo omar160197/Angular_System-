@@ -1,0 +1,104 @@
+
+<div class="form-group">
+  <input type="text" class="form-control mb-4" placeholder="Search" [(ngModel)]="query" id="listSearch">
+</div>
+<br>
+
+<table class="table table-bordered table-dark" *ngIf="customers.length > 0">
+  <thead >
+    <tr class="text-center">
+     <th rowspan="2">FullName</th>
+     <th rowspan="2">customerEmail</th>
+     <th rowspan="2">customerPhone</th>
+     <th rowspan="2">customerImage</th>
+     <th rowspan="2">Total</th>     
+     <th colspan="5">Customer Address</th>
+     <th rowspan="2">Orders</th> 
+     <th rowspan="2">role</th> 
+     <th rowspan="2">operation</th>
+     <th rowspan="2">edit</th>
+    </tr> 
+    <tr class="text-center">
+      <th>City</th>
+     <th>Country</th> 
+     <th>street</th>
+     <th>build_num</th>
+     <th>floor_num</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of customers | searchFilter: query "class="text-center"> 
+      <td>
+        {{item.fullName}}
+    </td>
+    <td>
+      {{item.customerEmail}}
+  </td>
+  <td>
+  {{item.customerPhone}}
+  </td>
+
+      <td> 
+       
+     <img src={{item.image}} width="100px" height="100px">
+      </td>
+        <td>
+          {{item.customerTotalPurchase}}
+      </td>
+      <td>
+        {{item.customerAddresses[0]?.city}}
+      </td>
+      <td>
+        {{item.customerAddresses[0]?.country}}
+      </td>
+      <td>
+        {{item.customerAddresses[0]?.streetName}}
+      </td>
+      <td>
+        {{item.customerAddresses[0]?.buildingNumber}}
+      </td>
+      <td>
+        {{item.customerAddresses[0]?.floorNumber}}
+      </td>
+      <td>
+        {{item.Orders}}
+  </td>
+  <td>
+    {{item.role}}
+ </td>
+ <td>
+  <button class="btn btn-primary" (click)="deptDetailsId=item._id">details</button>
+  <app-customer-delete [customerId]="item._id"></app-customer-delete>
+ </td> 
+ <td>
+  <button class="btn btn-primary" (click)="deptEditId=item._id">edit</button>
+ </td>
+ 
+    </tr>
+  </tbody>
+</table>
+
+<app-customer-details [customerId]="deptDetailsId"></app-customer-details>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

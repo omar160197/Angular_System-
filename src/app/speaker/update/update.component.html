@@ -1,0 +1,15 @@
+ 
+
+<!--        
+<button class="btn btn-primary" (click)="speaker.check=!speaker.check" *ngIf="!speaker.check">Edit</button>
+<button class="btn btn-primary" (click)="speaker.check=!speaker.check" *ngIf="speaker.check">Save</button>    -->
+
+
+ <input type="text" [(ngModel)]="speaker.fullName">
+ <input type="text" [(ngModel)]="speaker.address">
+ <select>
+    <option>Student</option>
+    <option>Instructor</option>
+  </select>
+ <button (click)="save()">save</button>
+

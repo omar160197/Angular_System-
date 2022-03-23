@@ -1,0 +1,13 @@
+<input type="text" [(ngModel)]="speaker.email" placeholder="Email" />  
+<input type="text" [(ngModel)]="speaker.fullName" placeholder="fullName" />
+<input type="text" [(ngModel)]="speaker.password" placeholder="password" />
+<input type="text" [(ngModel)]="speaker.address" placeholder="city" />
+<select [(ngModel)]="speaker.role">
+  <option>Speaker</option>
+  <option>Instructor</option>
+</select>
+<!-- <input type="text" name="image" /> -->
+
+<button (click)="onClick()">save</button>
+
+

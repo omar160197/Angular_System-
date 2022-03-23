@@ -1,0 +1,24 @@
+<input type="text" placeholder="fullName" [(ngModel)]="newCustomer.fullName"><br>
+<input type="number" placeholder="customerPhone" [(ngModel)]="newCustomer.customerPhone"><br>
+<input type="text" placeholder="customerEmail" [(ngModel)]="newCustomer.customerEmail"><br>
+<input type="text" placeholder="customerPassword"  [(ngModel)]="newCustomer.customerPassword"><br>
+<input type="text" placeholder="confirmPassword" [(ngModel)]="newCustomer.confirmPassword" ><br> 
+<input type="number" placeholder="customerTotalPurchase"  [(ngModel)]="newCustomer.customerTotalPurchase"><br>
+<input type="number" placeholder="Orders"  [(ngModel)]="newCustomer.Orders"><br>
+
+<input type="text" placeholder="city"  [(ngModel)]="newAddress.city"><br>
+<input type="text" placeholder="country"  [(ngModel)]="newAddress.country"><br>
+<input type="text" placeholder="streetName"  [(ngModel)]="newAddress.streetName"><br>
+<input type="number" placeholder="buildingNumber"  [(ngModel)]="newAddress.buildingNumber"><br>
+<input type="number" placeholder="floorNumber"  [(ngModel)]="newAddress.floorNumber"><br>
+
+<select  [(ngModel)]="newCustomer.role">
+  <option value="Merchant">Merchant</option>
+  <option value="Doctor">Doctor</option>  
+</select>
+
+<input type="file" name="image" (input)="onFileChange($event)">
+
+<button (click)="save()">save</button>
+
+
